@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>absolute ctrl + g to esc</name>
+    <identifier>remap.absolute_ctrl_g_to_esc</identifier>
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L, KeyCode::ESCAPE</autogen>
+  </item>
+  <item>
+      <name>absolute ctrl + j to esc</name>
+      <identifier>remap.absolute_ctrl_j_to_esc</identifier>
+      <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L, KeyCode::ESCAPE</autogen>
+  </item>
+  <item>
+      <name>absolute " to ""</name>
+      <identifier>remap.absolute_"_to_""</identifier>
+      <autogen>--KeyToKey-- KeyCode::2, ModifierFlag::SHIFT_L, KeyCode::2, ModifierFlag::SHIFT_L, KeyCode::2, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT</autogen>
+  </item>
+  <item>
+      <name>absolute [ to []</name>
+      <identifier>remap.absolute_[_to_[]</identifier>
+      <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE, KeyCode::BRACKET_RIGHT, KeyCode::BACKSLASH, KeyCode::CURSOR_LEFT</autogen>
+  </item>
+  <item>
+      <name>absolute ( to ()</name>
+      <identifier>remap.absolute_(_to_()</identifier>
+      <autogen>--KeyToKey-- KeyCode::8, ModifierFlag::SHIFT_L, KeyCode::8, ModifierFlag::SHIFT_L, KeyCode::9, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT</autogen>
+  </item>
+  <item>
+      <name>absolute ctrl + o to insert new line with indent</name>
+      <identifier>remap.absolute_ctrl_o_to_insert_newline_with_indent</identifier>
+      <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L, KeyCode::E, ModifierFlag::CONTROL_L, KeyCode::RETURN</autogen>
+  </item>
+  <item>
+      <name>absolute ctrl + d to delete line</name>
+      <identifier>remap.absolute_ctrl_d_to_insert_newline_with_indent</identifier>
+      <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::CONTROL_L, KeyCode::A, ModifierFlag::CONTROL_L, KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::DELETE</autogen>
+  </item>
+ </root>
