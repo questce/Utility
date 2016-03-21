@@ -1,5 +1,21 @@
 <?xml version="1.0"?>
 <root>
+  <replacementdef>
+    <replacementname>CONTROL_AE_IGNORE＿APPS</replacementname>
+    <replacementvalue>
+      XCODE,
+      EMACS,
+      REMOTEDESKTOPCONNECTION,
+      TERMINAL,
+      VI,
+      VIRTUALMACHINE,
+      X11,
+    </replacementvalue>
+  </replacementdef>
+  <appdef>
+    <appname>XCODE</appname>
+    <equal>com.apple.dt.Xcode</equal>
+  </appdef>
   <item>
     <name>absolute ctrl + g to esc</name>
     <identifier>remap.absolute_ctrl_g_to_esc</identifier>
@@ -35,4 +51,50 @@
       <identifier>remap.absolute_ctrl_d_to_insert_newline_with_indent</identifier>
       <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::CONTROL_L, KeyCode::A, ModifierFlag::CONTROL_L, KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::DELETE</autogen>
   </item>
+  <item>
+      <name>Control+AE to Command+Left/Right except Xcode</name>
+      <identifier>remap.control_ae_to_commnd_left_right</identifier>
+      <not>{{CONTROL_AE_IGNORE＿APPS}}</not>
+      <modifier_not>
+        ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+        ModifierFlag::OPTION_L,  ModifierFlag::OPTION_R,
+      </modifier_not>
+
+      <block>
+        <only>EXCEL</only>
+        <!-- In editing cell, we should send home/end. -->
+        <!-- But in search field, we should send command-left, right. -->
+        <!-- So, we send home/end if control-a,control-e twice. -->
+
+        <block>
+          <lastpressedphysicalkey_only>KeyCode::A</lastpressedphysicalkey_only>
+          <lastreleasedphysicalkey_only>KeyCode::A</lastreleasedphysicalkey_only>
+          <autogen>
+            __KeyToKey__
+            KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::HOME,
+          </autogen>
+        </block>
+        <block>
+          <lastpressedphysicalkey_only>KeyCode::E</lastpressedphysicalkey_only>
+          <lastreleasedphysicalkey_only>KeyCode::E</lastreleasedphysicalkey_only>
+          <autogen>
+            __KeyToKey__
+            KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::END,
+          </autogen>
+        </block>
+      </block>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      </autogen>
+    </item>
  </root>
