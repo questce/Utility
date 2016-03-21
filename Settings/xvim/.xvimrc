@@ -1,0 +1,13 @@
+nmap vw viw
+nmap dw diw
+nmap yw yiw
+noremap <C-w> viw
+
+nnoremap <C-a> 0 
+nnoremap <C-e> $
+nnoremap <C-c> <C-a>
+inoremap <C-e> <C-o>$
+
+nnoremap <C-;> %
+nnoremap <C-o> :xccmd goBackInHistoryByCommand<CR>
+nnoremap <C-i> :xccmd goForwardInHistoryByCommand<CR>
